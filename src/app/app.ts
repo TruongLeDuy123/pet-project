@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Todo } from './todo/todo';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.less'
+    selector: 'app-root',
+    templateUrl: './app.html',
+    styleUrl: './app.less',
+    imports: [
+        Todo, 
+        CommonModule,
+        
+    ]
 })
+
 export class App {
-  protected readonly title = signal('angular');
+    
 }
