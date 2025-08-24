@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
 	selector: 'app-login',
-	imports: [ReactiveFormsModule, CommonModule, RouterLink],
+	imports: [ReactiveFormsModule, CommonModule, RouterLink, NzButtonModule],
 	templateUrl: './login.html',
 	styleUrl: './login.less'
 })
