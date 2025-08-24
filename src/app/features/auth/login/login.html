@@ -1,0 +1,23 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h2>Login</h2>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" />
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                Email khong hop le
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                Mật khẩu tối thiểu 6 ký tự
+            </div>
+        </div>
+        <button type="submit">Login</button>
+        <a routerLink="/register">Chua co tai khoan ? Dang ky</a>
+        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
+
+</div>

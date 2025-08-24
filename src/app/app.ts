@@ -1,20 +1,12 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { Todo } from './todo/todo';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.html',
-    styleUrl: './app.less',
-    imports: [
-        Todo, 
-        CommonModule,
-        
-    ]
+  selector: 'app-root',
+  imports: [RouterOutlet, NzLayoutModule, NzMenuModule],
+  templateUrl: './app.html',
+  styleUrl: './app.less'
 })
-
-export class App {
-    
-}
+export class App {}

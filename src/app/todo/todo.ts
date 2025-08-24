@@ -1,8 +1,7 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Task } from '../models/task.model';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-todo',
@@ -19,8 +18,8 @@ export class Todo {
     filter: 'all' | 'active' | 'completed' = 'all'
 
     constructor(
-        private fb: FormBuilder,
-        @Inject(PLATFORM_ID) private platformId: Object
+        readonly fb: FormBuilder,
+        @Inject(PLATFORM_ID) readonly platformId: Object
     ) {
         this.todoForm = this.fb.group({
             title: ['', Validators.required]
