@@ -61,4 +61,9 @@ export class AuthService {
         }
         return false;
     }
+
+    getEmail(): string | null {
+        const user = localStorage.getItem("users")
+        return user ? JSON.parse(user)[0].email : null
+    }
 }

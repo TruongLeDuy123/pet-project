@@ -12,7 +12,15 @@ import { CommonModule } from '@angular/common';
     styleUrl: './app.less'
 })
 export class App {
+    email: string | null = null
     constructor(readonly auth: AuthService) { }
+
+    ngOnInit(): void {
+        if (this.auth.isLoggedIn())
+        {
+            this.email = this.auth.getEmail()
+        }
+    }
 
     logout() {
         this.auth.logout()

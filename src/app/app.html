@@ -9,7 +9,7 @@
 			<li *ngIf="auth.isLoggedIn()" nz-submenu [nzTitle]="userTpl">
 				<ng-template #userTpl>
 					<span>
-						<i nz-icon nzType="user"></i> Account
+						<i nz-icon nzType="user"></i> {{email}}
 					</span>
 				</ng-template>
 				<ul>
